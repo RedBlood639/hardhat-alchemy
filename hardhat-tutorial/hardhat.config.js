@@ -1,6 +1,7 @@
 require("dotenv").config();
 require("@nomiclabs/hardhat-waffle");
-
+require("@nomiclabs/hardhat-etherscan");
+require("@nomiclabs/hardhat-ethers");
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
@@ -14,5 +15,8 @@ module.exports = {
       url: ALCHEMY_HTTP_API,
       accounts: [`${PRIVATE_KEY}`],
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
   },
 };
