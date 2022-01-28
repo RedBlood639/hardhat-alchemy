@@ -47,30 +47,29 @@ describe("Token contract", function () {
   let addr2;
   let addrs;
 
-  before(function () {
-    console.log("before");
+  //   before(function () {
+  //     console.log("before");
 
-    // runs before all tests in this file regardless where this line is defined.
-  });
+  //     // runs before all tests in this file regardless where this line is defined.
+  //   });
 
-  after(function () {
-    console.log("after");
+  //   after(function () {
+  //     console.log("after");
 
-    // runs after all tests in this file
-  });
+  //     // runs after all tests in this file
+  //   });
 
-  afterEach(function () {
-    console.log("afterEach");
+  //   afterEach(function () {
+  //     console.log("afterEach");
 
-    // runs after each test in this block
-  });
+  //     // runs after each test in this block
+  //   });
 
   beforeEach(async function () {
     Token = await ethers.getContractFactory("Token");
     [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
     hardhatToken = await Token.deploy();
-    console.log("beforeEach");
     // runs before each test in this block
   });
 
@@ -92,9 +91,9 @@ describe("Token contract", function () {
       const addr1Balance = await hardhatToken.balanceOf(addr1.address);
       expect(addr1Balance).to.equal(50);
 
-      await hardhatToken.connect(addr1).transfer(addr2.address, 50);
+      await hardhatToken.connect(addr1).transfer(addr2.address, 30);
       const addr2Balance = await hardhatToken.balanceOf(addr2.address);
-      expect(addr2Balance).to.equal(50);
+      expect(addr2Balance).to.equal(30);
     });
 
     it("should fail if sender doesn’t have enough tokens", async function () {
