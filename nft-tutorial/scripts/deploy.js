@@ -19,5 +19,6 @@ task("deploy", "Deploys the NFT.sol contract").setAction(async function (
     getAccount()
   );
   const nft = await nftContractFactory.deploy();
+  await nft.deployed();
   console.log(`Contract deployed to address: ${nft.address}`);
 });
