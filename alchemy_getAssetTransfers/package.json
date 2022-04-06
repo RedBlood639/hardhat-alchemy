@@ -2,7 +2,7 @@
   "name": "alchemy_getAssetTransfers",
   "version": "1.0.0",
   "description": "",
-  "main": "getTransfer.js",
+  "main": "getAllTransfer.js",
   "scripts": {
     "start": "nodemon"
   },
